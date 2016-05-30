@@ -1,3 +1,13 @@
-﻿  Main.cpp
-  Eindopdracht.vcxproj -> C:\Users\Beheerder.eigenaar-pc\Documents\GitHub\Eindopdracht-OpenGL\Eindopdracht\Debug\Eindopdracht.exe
-  Eindopdracht.vcxproj -> C:\Users\Beheerder.eigenaar-pc\Documents\GitHub\Eindopdracht-OpenGL\Eindopdracht\Debug\Eindopdracht.pdb (Partial PDB)
+﻿  Display.cpp
+  Generating Code...
+  Compiling...
+  Main.cpp
+  Generating Code...
+Main.obj : error LNK2005: "int width" (?width@@3HA) already defined in Display.obj
+Main.obj : error LNK2005: "int height" (?height@@3HA) already defined in Display.obj
+Main.obj : error LNK2005: "float lastFrameTime" (?lastFrameTime@@3MA) already defined in Display.obj
+Main.obj : error LNK2005: "bool justMoved" (?justMoved@@3_NA) already defined in Display.obj
+Main.obj : error LNK2005: "bool * keys" (?keys@@3PA_NA) already defined in Display.obj
+Main.obj : error LNK2005: "class Map * map" (?map@@3PAVMap@@A) already defined in Display.obj
+Main.obj : error LNK2005: "struct Camera camera" (?camera@@3UCamera@@A) already defined in Display.obj
+C:\Users\Beheerder.eigenaar-pc\Documents\GitHub\Eindopdracht-OpenGL\Eindopdracht\Debug\Eindopdracht.exe : fatal error LNK1169: one or more multiply defined symbols found
