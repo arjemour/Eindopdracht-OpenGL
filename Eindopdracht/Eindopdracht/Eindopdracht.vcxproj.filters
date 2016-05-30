@@ -15,7 +15,7 @@
     <Filter Include="Source Files\Models">
       <UniqueIdentifier>{721b9fea-71a5-4fbd-9f32-1188897cb2af}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Map">
+    <Filter Include="Source Files\World">
       <UniqueIdentifier>{361e89ae-c133-4909-aeb3-66c5443e88e1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -29,11 +29,14 @@
     <ClCompile Include="Cube.cpp">
       <Filter>Source Files\Models</Filter>
     </ClCompile>
-    <ClCompile Include="Map.cpp">
-      <Filter>Source Files\Map</Filter>
-    </ClCompile>
     <ClCompile Include="Models.cpp">
       <Filter>Source Files\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="World.cpp">
+      <Filter>Source Files\World</Filter>
+    </ClCompile>
+    <ClCompile Include="MapLoader.cpp">
+      <Filter>Source Files\World</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -46,14 +49,17 @@
     <ClInclude Include="Display2.h">
       <Filter>Source Files\View</Filter>
     </ClInclude>
-    <ClInclude Include="Map.h">
-      <Filter>Source Files\Map</Filter>
-    </ClInclude>
     <ClInclude Include="Models.h">
       <Filter>Source Files\Models</Filter>
     </ClInclude>
     <ClInclude Include="Vertex.h">
       <Filter>Source Files\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="World.h">
+      <Filter>Source Files\World</Filter>
+    </ClInclude>
+    <ClInclude Include="MapLoader.h">
+      <Filter>Source Files\World</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

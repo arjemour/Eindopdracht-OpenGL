@@ -121,16 +121,18 @@
     <ClCompile Include="Cube.cpp" />
     <ClCompile Include="Display.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Map.cpp" />
+    <ClCompile Include="MapLoader.cpp" />
     <ClCompile Include="Models.cpp" />
+    <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Cube.h" />
     <ClInclude Include="Display.h" />
     <ClInclude Include="Display2.h" />
-    <ClInclude Include="Map.h" />
+    <ClInclude Include="MapLoader.h" />
     <ClInclude Include="Models.h" />
     <ClInclude Include="Vertex.h" />
+    <ClInclude Include="World.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

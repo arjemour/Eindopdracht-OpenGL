@@ -3,7 +3,6 @@
 #define _USE_MATH_DEFINES
 #include <cmath>
 #include "Display.h"
-#include "Map.h"
 #include "Display2.h"
 
 Display::Display(int argc, char* argv[])
@@ -11,8 +10,18 @@ Display::Display(int argc, char* argv[])
 	width = 800;
 	height = 600;
 
-	map = new Map("resources/maps/map.txt");
+	models = new Models;
+	world = new World("resources/maps/map.txt", models);
+	
 	initFreeGlut(argc, argv);
+}
+
+Display::~Display()
+{
+	delete models;
+	delete world;
+	models = nullptr;
+	world = nullptr;
 }
 
 void initFreeGlut(int argc, char* argv[])
@@ -70,7 +79,7 @@ void render()
 	float pos[4] = { 0.5, 1, -1, 0 };
 	glLightfv(GL_LIGHT0, GL_POSITION, pos);
 
-	map->draw();
+	world->renderWorld();
 
 	glutSwapBuffers();
 }

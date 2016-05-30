@@ -1,5 +1,6 @@
 #pragma once
-#include "Map.h"
+#include "Models.h"
+#include "World.h"
 
 struct Camera
 {
@@ -15,7 +16,8 @@ float lastFrameTime = 0;
 bool justMoved = false;
 bool keys[255];
 
-Map* map;
+Models* models;
+World* world;
 
 void render();
 void move(float angle, float fac);
