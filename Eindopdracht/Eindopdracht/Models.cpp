@@ -5,7 +5,6 @@ Models::Models()
 	cube = new Cube;
 }
 
-
 Models::~Models()
 {
 	delete cube;

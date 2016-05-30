@@ -38,6 +38,7 @@ Cube::Cube()
 
 Cube::~Cube()
 {
+	cubeVertices.clear();
 }
 
 void Cube::drawCube()
