@@ -52,8 +52,16 @@ void timerFunc(int time)
 	lastFrameTime = frameTime;
 
 	const float speed = 3;
-	if (keys['a']) move(0, deltaTime*speed);
-	if (keys['d']) move(180, deltaTime*speed);
+	if (keys['a'])
+	{
+		world->getPlayer()->updateLocation().x -= 0.05;
+		move(0, deltaTime*speed);
+	}
+	if (keys['d']) 
+	{
+		world->getPlayer()->updateLocation().x += 0.05;
+		move(180, deltaTime*speed);
+	}
 	/*	if (keys['w']) move(90, deltaTime*speed);
 	if (keys['s']) move(270, deltaTime*speed);*/
 
@@ -68,13 +76,13 @@ void render()
 
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	gluPerspective(80.0f, (float)width / height, 0.1, 30);
+	gluPerspective(100.0f, (float)width / height, 0.1, 30);
 
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
-	glRotatef(camera.rotX, 1, 0, 0);
-	glRotatef(camera.rotZ, 0, 1, 0);
-	glTranslatef(camera.posX, -1.5, camera.posZ);
+
+	//glRotatef(20, 1, 0, 0);
+	glTranslatef(camera.posX, -2, camera.posZ);
 
 	float pos[4] = { 0.5, 1, -1, 0 };
 	glLightfv(GL_LIGHT0, GL_POSITION, pos);
