@@ -54,17 +54,18 @@ void timerFunc(int time)
 	const float speed = 3;
 	if (keys['a'])
 	{
-		world->getPlayer()->updateLocation().x -= 0.05;
+		world->getPlayer()->getLocation().x -= 0.05;
 		move(0, deltaTime*speed);
 	}
 	if (keys['d']) 
 	{
-		world->getPlayer()->updateLocation().x += 0.05;
+		world->getPlayer()->getLocation().x += 0.05;
 		move(180, deltaTime*speed);
 	}
 	/*	if (keys['w']) move(90, deltaTime*speed);
 	if (keys['s']) move(270, deltaTime*speed);*/
 
+	world->updateWorld();
 	glutPostRedisplay();
 	glutTimerFunc(16, timerFunc, 1);
 }

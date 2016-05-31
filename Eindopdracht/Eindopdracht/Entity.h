@@ -4,7 +4,14 @@
 struct Location
 {
 	float x, y, z;
+
 	Location() { x = y = z = 0; };
+
+	void setXY(float xPos, float yPos)
+	{
+		x = xPos;
+		y = yPos;
+	}
 };
 
 class Entity
@@ -16,7 +23,7 @@ public:
 	virtual void update() = 0;
 	virtual void draw(Models* model) = 0;
 
-	Location& updateLocation() { return location; };
+	Location& getLocation() { return location; };
 
 protected:
 	Location location;

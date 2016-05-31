@@ -7,14 +7,14 @@
 World::World(std::string mapPath, Models* models) : models(models)
 {
 	MapLoader::loadMap(mapPath, map);
-	entities.push_back(new Player(0, 2, 0));
+	entities.push_back(new Player(2, 2, 0));
 
 	b2Vec2 gravity(0.0f, -9.81);
 	world = new b2World(gravity);
 	
 	b2BodyDef bodyDef;
 	bodyDef.type = b2_dynamicBody;
-	bodyDef.position.Set(entities[0]->updateLocation().x, entities[0]->updateLocation().x);
+	bodyDef.position.Set(entities[0]->getLocation().x, entities[0]->getLocation().x);
 	bodyDef.fixedRotation = true;
 	bodyDef.angle = 0;
 	body = world->CreateBody(&bodyDef);
@@ -40,6 +40,8 @@ World::~World()
 
 void World::updateWorld()
 {
+	entities[0]->getLocation().x = body->GetPosition().x;
+	entities[0]->getLocation().y = body->GetPosition().y;
 	world->Step(1.0f / 60.0f, 6, 2);
 }
 
