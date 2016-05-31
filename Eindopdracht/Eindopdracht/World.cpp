@@ -8,16 +8,15 @@ World::World(std::string mapPath, Models* models) : models(models)
 {
 	MapLoader::loadMap(mapPath, map);
 	entities.push_back(new Player(2, 2, 0));
+	setupBox2D();
+}
 
+void World::setupBox2D()
+{
 	b2Vec2 gravity(0.0f, -9.81);
 	world = new b2World(gravity);
-	
-	b2BodyDef bodyDef;
-	bodyDef.type = b2_dynamicBody;
-	bodyDef.position.Set(entities[0]->getLocation().x, entities[0]->getLocation().x);
-	bodyDef.fixedRotation = true;
-	bodyDef.angle = 0;
-	body = world->CreateBody(&bodyDef);
+
+	body = world->CreateBody(&entities[0]->getBodyDef());
 
 	b2PolygonShape boxShape;
 	boxShape.SetAsBox(0.1f, 0.1f);
@@ -34,8 +33,6 @@ World::~World()
 	map.clear();
 	delete models;
 	delete world;
-	models = nullptr;
-	world = nullptr;
 }
 
 void World::updateWorld()

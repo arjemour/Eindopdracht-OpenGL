@@ -23,5 +23,7 @@ private:
 	b2World* world;
 	b2Body* body = nullptr;
 	b2Fixture* m_fixture = nullptr;
+
+	void setupBox2D();
 };
 
