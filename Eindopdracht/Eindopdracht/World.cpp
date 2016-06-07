@@ -7,7 +7,7 @@
 World::World(std::string mapPath, Models* models) : models(models)
 {
 	MapLoader::loadMap(mapPath, map);
-	entities.push_back(new Player(2, 2, 0));
+	player = new Player(2, 2, 0, world);
 	setupBox2D();
 }
 
@@ -15,17 +15,6 @@ void World::setupBox2D()
 {
 	b2Vec2 gravity(0.0f, -9.81);
 	world = new b2World(gravity);
-
-	body = world->CreateBody(&entities[0]->getBodyDef());
-
-	b2PolygonShape boxShape;
-	boxShape.SetAsBox(0.1f, 0.1f);
-
-	b2FixtureDef fixtureDef;
-	fixtureDef.shape = &boxShape;
-	fixtureDef.density = 1.0f;
-	fixtureDef.friction = 0.3f;
-	m_fixture = body->CreateFixture(&fixtureDef);
 }
 
 World::~World()
@@ -37,8 +26,8 @@ World::~World()
 
 void World::updateWorld()
 {
-	entities[0]->getLocation().x = body->GetPosition().x;
-	entities[0]->getLocation().y = body->GetPosition().y;
+	player->getLocation().x = player->getBody()->GetPosition().x;
+	player->getLocation().y = player->getBody()->GetPosition().y;
 	world->Step(1.0f / 60.0f, 6, 2);
 }
 
@@ -65,7 +54,8 @@ void World::renderWorld()
 		y += 0.4f;
 		x = 0;
 	}
-	for (int i = 0; i < entities.size(); i++) entities[i]->draw(models);
+	player->draw(models);
+	//for (int i = 0; i < entities.size(); i++) entities[i]->draw(models);
 }
 
 

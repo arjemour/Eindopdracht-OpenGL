@@ -21,8 +21,8 @@ private:
 
 	Models* models;
 	b2World* world;
-	b2Body* body = nullptr;
-	b2Fixture* m_fixture = nullptr;
+
+	Player* player;
 
 	void setupBox2D();
 };

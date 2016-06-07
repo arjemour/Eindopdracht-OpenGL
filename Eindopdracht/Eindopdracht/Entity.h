@@ -1,6 +1,6 @@
 #pragma once
 #include "Models.h"
-#include <Box2D/Dynamics/b2Body.h>
+#include <Box2D/Box2D.h>
 
 struct Location
 {
@@ -25,10 +25,13 @@ public:
 	virtual void draw(Models* model) = 0;
 
 	Location& getLocation() { return location; };
-	b2BodyDef& getBodyDef() { return bodyDef; };
+	b2BodyDef* getBodyDef() { return bodyDef; };
+	b2Body* getBody() { return  body; }
 
 protected:
 	Location location;
-	b2BodyDef bodyDef;
+	b2BodyDef* bodyDef = nullptr;
+	b2Body* body = nullptr;
+	b2Fixture* m_fixture = nullptr;
 };
 
