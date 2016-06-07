@@ -21,6 +21,9 @@
     <Filter Include="Source Files\Entities">
       <UniqueIdentifier>{8d0c9ac7-a149-450d-ab80-ddbad28e583c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Entities\Collision">
+      <UniqueIdentifier>{adb8de92-31dc-4f34-b089-7b47dc08e825}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -46,6 +49,9 @@
     </ClCompile>
     <ClCompile Include="Player.cpp">
       <Filter>Source Files\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="BoxCollision.cpp">
+      <Filter>Source Files\Entities\Collision</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -75,6 +81,9 @@
     </ClInclude>
     <ClInclude Include="Player.h">
       <Filter>Source Files\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="BoxCollision.h">
+      <Filter>Source Files\Entities\Collision</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
